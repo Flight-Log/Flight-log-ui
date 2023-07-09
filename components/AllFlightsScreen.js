@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 function AllFlightsScreen() {
   return (
     <View>
-      <Text>Previous Flights</Text>
+      <Text>Flight History</Text>
       {/* Add your previous flights component here */}
     </View>
   )

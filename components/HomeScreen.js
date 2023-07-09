@@ -11,7 +11,7 @@ function HomeScreen({ navigation }) {
       />
       <Button
         title="Previous Flights"
-        onPress={() => navigation.navigate('PreviousFlights')}
+        onPress={() => navigation.navigate('FlightHistory')}
       />
     </View>
   )
