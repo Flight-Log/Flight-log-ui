@@ -1,24 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
-import Header from './Header/Header';
+import Header from './Header';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator()
 
-function HomeScreen({ navigation}) {
+function HomeScreen({navigation}) {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <Text>Flight Log</Text>
       <Button 
-      title="Log a Flight"
-      onPress={() => navigation.navigate('Log-Flight')}></Button>
+        title="Log a Flight"
+        onPress={() => navigation.navigate('Log-Flight')}></Button>
+
+      <Button 
+        title="Previous Flight"
+        onPress={() => navigation.navigate('Log-Flight')}></Button>
     </View>
   )
 }
 
-function DetailsScreen() {
+function LogFlightScreen() {
   return (
     <View>
       <Text>Log Flight</Text>
@@ -31,7 +35,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Log-Flight" component={DetailsScreen} />
+        <Stack.Screen name="Log-Flight" component={LogFlightScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     // <View style={styles.container}>
