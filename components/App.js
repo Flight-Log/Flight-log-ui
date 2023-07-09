@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './HomeScreen'
 import LogFlightScreen from './LogFlightScreen'
 import AllFlightsScreen from './AllFlightsScreen'
+import FlightDetailsScren from './FlightDetailsScreens'
 
 const Stack = createNativeStackNavigator()
 

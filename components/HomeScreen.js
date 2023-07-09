@@ -3,10 +3,13 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 function HomeScreen({ navigation }) {
   return (
-    <ImageBackground source={require('../assets/hero-img.png')} style={styles.ImageBackground}>
+    <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
       <View style={styles.container}>
-        <Text style={styles.text}>Flight Log</Text>
+        <Text style={styles.title}>Flight Log</Text>
         <View style={styles.content}>
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>What would you like to do today?</Text>
+          </View>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('LogFlight')}
@@ -17,7 +20,7 @@ function HomeScreen({ navigation }) {
             style={styles.button}
             onPress={() => navigation.navigate('FlightHistory')}
           >
-            <Text style={styles.buttonText}>Flight History</Text>
+            <Text style={styles.buttonText}>View Flight History</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -29,18 +32,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  ImageBackground: {
+  imageBackground: {
     flex: 1,
   },
-  text: {
+  title: {
     color: '#ffffff',
-    justifyContent: 'center'
+    fontSize: 45,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 60,
   },
   content: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    marginBottom: 60,
+  },
+  textContainer: {
+    marginBottom: 20,
+  },
+  text: {
+    color: '#1f4f99',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   button: {
     backgroundColor: '#1f4f99',
@@ -51,7 +67,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
   },
 });
