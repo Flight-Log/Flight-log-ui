@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 export default function Header() {
   return (
     <View style={styles.header}>
-    {/* <Image source={require('../assets/hero-img.png')} style={styles.backgroundImage} /> */}
+    <Image source={require('../assets/hero-img.png')} style={styles.backgroundImage} />
     <Text style={styles.headerText}>FLIGHT LOG</Text>
     </View>
   
