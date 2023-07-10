@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-function LogFlightScreen() {
+function FlightDetailsScreen() {
   return (
     <View>
-      <Text>Log Flight</Text>
+      <Text>Flight Details</Text>
       
     </View>
   )
 }
 
-export default LogFlightScreen
+export default FlightDetailsScreen
