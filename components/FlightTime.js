@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   container: {
     height: '75%',
-    width: '50%',
+    width: '60%',
     backgroundColor: 'gray',
     borderRadius: 10,
     justifyContent: 'center',
