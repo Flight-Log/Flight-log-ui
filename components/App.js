@@ -35,30 +35,7 @@ class AppNavigator extends Component {
       })
 
   }
-  // const [userData, setUserData] = useState(null)
-  // const [userFlightsData, setUserFlightsData] = useState(null)
-
-  // useEffect(() => {
-  //   // Fetch user and user flights data on component mount
-  //   const fetchData = async () => {
-  //     try {
-  //       const userData = await getUser();
-  //       const userFlightsData = await getUserFlights();
-  //       console.log('User', userData)
-  //       console.log('User Flights', userFlightsData)
-  //       setUserData(userData);
-  //       setUserFlightsData(userFlightsData);
-  //     } catch (error) {
-  //       console.log('Error', error)
-  //     }
-  //   };
-  //       console.log('User', userData)
-  //       console.log('User Flights', userFlightsData)
-
-  //   fetchData();
-
-  // }, []);
-
+ 
   render() {
 
     return (
