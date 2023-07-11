@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { View, Text } from 'react-native'
+import FlightTime from './FlightTime'
 
-function FlightHistoryScreen() {
+const FlightHistoryScreen = ({ route }) => {
+
   return (
     <View>
-      <Text>Flight History</Text>
-      
+      <FlightTime userFlights={route.params.userFlights} />
+      <Text>This is the flight history component</Text>
     </View>
-  )
-}
+  );
+};
 
 export default FlightHistoryScreen
