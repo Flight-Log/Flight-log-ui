@@ -11,12 +11,12 @@ import { getUser, getUserFlights } from '../ApiCalls'
 
 const Stack = createNativeStackNavigator()
 
-class AppNavigator extends Component  {
+class AppNavigator extends Component {
   constructor() {
     super()
     this.state = {
       user: {},
-      userFlights: [], 
+      userFlights: [],
       error: ''
     }
   }
@@ -24,15 +24,17 @@ class AppNavigator extends Component  {
   componentDidMount() {
     getUserFlights()
       .then(data => {
-        console.log(data.data[0]);
+        // console.log(data.data);
+        this.setState({ userFlights: data.data })
         // Update component state or perform other operations with the data
       })
     getUser()
       .then(data => {
-        console.log(data.data)
+        // console.log(data.data.attributes)
+        this.setState({ user: data.data })
       })
 
-    }
+  }
   // const [userData, setUserData] = useState(null)
   // const [userFlightsData, setUserFlightsData] = useState(null)
 
@@ -54,22 +56,30 @@ class AppNavigator extends Component  {
   //       console.log('User Flights', userFlightsData)
 
   //   fetchData();
-    
+
   // }, []);
 
-    render() {
-    
-      return (
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="LogFlight" component={FlightForm} />
-            <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} />
-            <Stack.Screen name="FlightDetails" component={FlightDetailsScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      )
-    }
+  render() {
+
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="LogFlight" component={FlightForm} />
+          {/* <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} user={this.state.user} userFlights={this.state.userFlights} />
+             */}
+          <Stack.Screen
+            name="FlightHistory"
+            component={FlightHistoryScreen}
+            initialParams={{
+              user: this.state.user,
+              userFlights: this.state.userFlights
+            }} />
+          <Stack.Screen name="FlightDetails" component={FlightDetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+  }
 }
 
 export default AppNavigator
