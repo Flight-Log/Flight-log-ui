@@ -33,6 +33,11 @@ const FlightTime = ({ userFlights }) => {
     return flights
   }
 
+  const getNumFlights = () => {
+    let flights = userFlights.reduce((count) => count + 1, 0)
+    return flights
+  }
+
   return (
     <SafeAreaView style={styles.flightTime}>
       <View style={styles.header}>
@@ -40,6 +45,10 @@ const FlightTime = ({ userFlights }) => {
       </View>
       <View style={styles.main}>
         <View style={styles.container}>
+        <View style={styles.detailsContainer}>
+            <Text style={styles.textSize}>Total Flights</Text>
+            <Text style={styles.textSize}>{getNumFlights()}</Text>
+          </View>
           <View style={styles.detailsContainer}>
             <Text style={styles.textSize}>Total Hours</Text>
             <Text style={styles.textSize}>{getTotalHours()}</Text>
@@ -85,7 +94,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   container: {
-    height: '60%',
+    height: '75%',
     width: '50%',
     backgroundColor: 'gray',
     borderRadius: 10,
