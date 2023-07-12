@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   flightTime: {
     height: '25%',
     alignItems: 'center',
-    borderWidth: 2
+    // borderWidth: 2
   },
   header: {
     height: '30%',
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   container: {
     height: '75%',
