@@ -71,7 +71,7 @@ const FlightTime = ({ userFlights }) => {
 
 const styles = StyleSheet.create({
   flightTime: {
-    height: '50%',
+    height: '25%',
     alignItems: 'center',
     borderWidth: 2
   },
