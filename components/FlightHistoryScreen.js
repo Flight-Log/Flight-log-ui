@@ -33,7 +33,10 @@ const FlightHistoryScreen = ({ route }) => {
     <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
       <View style={[ styles.container, { flexDirection: 'column' }]}>
         <FlightTime style={styles.timeContainer} userFlights={route.params.userFlights} />
-        <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
+        <ScrollView style={styles.scrollContainer} 
+                    contentContainerStyle={styles.contentContainer}
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}>
           <View style={styles.cardsContainer}>{flightCards}</View>
         </ScrollView>
       </View>
