@@ -24,7 +24,7 @@ class AppNavigator extends Component {
   componentDidMount() {
     getUserFlights()
       .then(data => {
-        // console.log(data.data);
+        // console.log(data.data.map(flight => flight.attributes));
         this.setState({ userFlights: data.data })
         // Update component state or perform other operations with the data
       })
@@ -35,14 +35,33 @@ class AppNavigator extends Component {
       })
 
   }
- 
-  render() {
 
+  addFlight = (newFlight) => {
+    fetch("https://fa654a41-d040-4528-99c2-4e7b349236b9.mock.pstmn.io/users/1/flights", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newFlight)
+    })
+      .then(res => res.json())
+      .then(flight => {
+        this.setState({ userFlights: [...this.state.userFlights, flight] });
+      })
+    // .catch(error => {
+    //   console.error('Error making POST request', error);
+    // });
+  }
+
+  render() {
+console.log(this.state.userFlights)
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="LogFlight" component={FlightForm} />
+          <Stack.Screen name="LogFlight" options={{ title: 'Log Flight' }}>
+            {(props) => <FlightForm {...props} addFlight={this.addFlight} />}
+          </Stack.Screen>
           {/* <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} user={this.state.user} userFlights={this.state.userFlights} />
              */}
           <Stack.Screen
