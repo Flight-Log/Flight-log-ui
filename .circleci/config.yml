@@ -4,6 +4,12 @@ orbs:
   node: circleci/node@4.7
   cypress: cypress-io/cypress@3.1.2
 
+workflows:
+  build:
+    jobs:
+      - cypress/run: # "run" job comes from the "cypress" orb
+          start-command: 'npm run start'
+
 jobs:
   build_and_test:
     executor: node/default
