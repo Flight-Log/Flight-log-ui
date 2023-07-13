@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
+import PropTypes from 'prop-types'
 
 const FlightTime = ({ userFlights }) => {
 
@@ -67,8 +68,6 @@ const FlightTime = ({ userFlights }) => {
   )
 }
 
-
-
 const styles = StyleSheet.create({
   flightTime: {
     height: '25%',
@@ -110,7 +109,17 @@ const styles = StyleSheet.create({
   textSize: {
     fontSize: 20,
   }
-
 })
+
+FlightTime.propTypes = {
+  userFlights: PropTypes.arrayOf(
+    PropTypes.shape({
+      attributes: PropTypes.shape({
+        day_hours: PropTypes.string.isRequired,
+        night_hours: PropTypes.string.isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
+};
 
 export default FlightTime
