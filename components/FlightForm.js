@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
-
+import PropTypes from 'prop-types'
 
 
 class FlightForm extends Component {
