@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 
 
-
 class FlightForm extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +46,8 @@ class FlightForm extends Component {
 }
 
   render() {
+    const { navigation } = this.props;
+
     return (
 
       <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
@@ -111,9 +112,14 @@ class FlightForm extends Component {
               onChangeText={(text) => this.handleChange('role', text)}
             />
 
-            <TouchableOpacity style={styles.submitButton} onPress={event => this.handleSubmit(event)}>
-              <Text style={styles.submitText}>Log Flight</Text>
+            <TouchableOpacity style={styles.button} onPress={event => this.handleSubmit(event)}>
+              <Text style={styles.buttonText}>Log Flight</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History')}>
+              <Text style={styles.buttonText}>View Flight History</Text>
+            </TouchableOpacity>
+
           </View>
         </View>
       </ImageBackground>
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
     borderColor: '#FFFFFF',
   },
 
-  submitButton: {
+  button: {
     height: 50,
     width: 250,
     backgroundColor: '#1f4f99',
@@ -165,7 +171,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     marginVertical: 8,
   },
-  submitText: {
+  buttonText: {
     alignSelf: 'center',
     color: '#ffffff',
     fontSize: 18,

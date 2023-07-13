@@ -64,7 +64,7 @@ class AppNavigator extends Component {
           {/* <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} user={this.state.user} userFlights={this.state.userFlights} />
              */}
           <Stack.Screen
-            name="FlightHistory"
+            name="Flight History"
             component={FlightHistoryScreen}
             initialParams={{
               user: this.state.user,

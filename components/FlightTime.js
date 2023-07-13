@@ -40,9 +40,6 @@ const FlightTime = ({ userFlights }) => {
 
   return (
     <SafeAreaView style={styles.flightTime}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Flight Time</Text>
-      </View>
       <View style={styles.main}>
         <View style={styles.container}>
         <View style={styles.detailsContainer}>

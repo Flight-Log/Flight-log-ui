@@ -18,7 +18,7 @@ function HomeScreen({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('FlightHistory')}
+            onPress={() => navigation.navigate('Flight History')}
           >
             <Text style={styles.buttonText}>View Flight History</Text>
           </TouchableOpacity>
