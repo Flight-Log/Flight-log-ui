@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 
 function FlightDetailsScreen({ route }) {
   const { flight } = route.params
-
   return (
     <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
       <View style={styles.container}>

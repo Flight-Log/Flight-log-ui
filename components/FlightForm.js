@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import PropTypes from 'prop-types'
 
 
 class FlightForm extends Component {
@@ -177,7 +178,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-});
+})
 
+FlightForm.propTypes = {
+  addFlight: PropTypes.func.isRequired,
+};
 export default FlightForm
 

@@ -3,6 +3,7 @@ import { View, Text, ScrollView, StyleSheet, ImageBackground, TouchableOpacity }
 import FlightTime from './FlightTime'
 import FlightCard from './FlightCard'
 import { useNavigation } from '@react-navigation/native'
+import PropTypes from 'prop-types'
 
 const FlightHistoryScreen = ({ route }) => {
  
@@ -78,4 +79,22 @@ const styles = StyleSheet.create({
   },
 });
 
+FlightHistoryScreen.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      userFlights: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          attributes: PropTypes.shape({
+            date: PropTypes.string.isRequired,
+            start_location: PropTypes.string.isRequired,
+            end_location: PropTypes.string.isRequired,
+            aircraft: PropTypes.string.isRequired,
+            role: PropTypes.string.isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 export default FlightHistoryScreen
