@@ -35,14 +35,16 @@ class AppNavigator extends Component {
       })
 
   }
- 
+
   render() {
 
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="LogFlight" component={FlightForm} />
+          <Stack.Screen name="LogFlight" options={{ title: 'Log Flight' }}>
+            {(props) => <FlightForm {...props} addFlight={this.addFlight} />}
+          </Stack.Screen>
           {/* <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} user={this.state.user} userFlights={this.state.userFlights} />
              */}
           <Stack.Screen
