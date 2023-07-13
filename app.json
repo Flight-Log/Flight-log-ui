@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Flight-log-ui",
-    "slug": "Flight-log-ui",
+    "slug": "flight-log",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "flight.log"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +26,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2c53004d-a9e5-497d-82b4-3ef1ed48f0ee"
+      }
+    },
+    "owner": "msaqueli"
   }
 }
