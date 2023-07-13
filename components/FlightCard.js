@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Link } from '@react-navigation/native'
+import PropTypes from 'prop-types'
 
 const FlightCard = ({ date, departure, arrival, aircraft, pilot, id }) => {
   return (
@@ -61,5 +62,14 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
 });
+
+FlightCard.propTypes = {
+  date: PropTypes.string.isRequired,
+  departure: PropTypes.string.isRequired,
+  arrival: PropTypes.string.isRequired,
+  aircraft: PropTypes.string.isRequired,
+  pilot: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
 export default FlightCard;
