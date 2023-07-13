@@ -19,19 +19,32 @@ class FlightForm extends Component {
   }
 
   handleChange = (name, value) => {
-    this.setState({ [name]: value });
+    this.setState({ [name]: value })
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const newFlight = {
       id: Date.now(),
       ...this.state
     };
-    this.props.addFlight(newFlight);
+    this.props.addFlight(newFlight)
+    this.clearInputs()
 
-  };
+  }
+
+  clearInputs = () => {
+    this.setState({   
+    night_hours: '',
+    day_hours: '',
+    aircraft: '',
+    description: '',
+    date: '',
+    start_location: '',
+    end_location: '',
+    role: ''});
+}
 
   render() {
     return (
