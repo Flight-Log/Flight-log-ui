@@ -40,9 +40,6 @@ const FlightTime = ({ userFlights }) => {
 
   return (
     <SafeAreaView style={styles.flightTime}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Flight Time</Text>
-      </View>
       <View style={styles.main}>
         <View style={styles.container}>
         <View style={styles.detailsContainer}>
@@ -79,8 +76,7 @@ const styles = StyleSheet.create({
   header: {
     height: '30%',
     width: '100%',
-    borderWidth: 2,
-    backgroundColor: '#000080',
+    backgroundColor: '#1f4f99',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -94,12 +90,11 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderWidth: 1,
   },
   container: {
     height: '75%',
     width: '60%',
-    backgroundColor: 'gray',
+    backgroundColor: '#1f4f99',
     borderRadius: 10,
     justifyContent: 'center',
   },
@@ -109,6 +104,8 @@ const styles = StyleSheet.create({
   },
   textSize: {
     fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
   }
 
 })

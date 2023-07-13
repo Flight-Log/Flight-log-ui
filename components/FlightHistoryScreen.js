@@ -1,23 +1,29 @@
 import React, {useEffect} from 'react'
-import { View, Text, ScrollView, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
 import FlightTime from './FlightTime'
 import FlightCard from './FlightCard'
-
+import { useNavigation } from '@react-navigation/native'
 
 const FlightHistoryScreen = ({ route }) => {
  
   // console.log(route.params.userFlights)
   const userFlights = route.params.userFlights
+  const navigation = useNavigation()
+
+  const handleFlightCardPress = (flight) => {
+    navigation.navigate('FlightDetails', { flight })
+  }
 
   const flightCards = userFlights.map((flight) => {
-    
+
     const flightId = flight.id;
     const flightDetails = flight.attributes;
     
     return (
 
-      <View key={flightId}>
-        <FlightCard 
+      <TouchableOpacity key={flight.id} onPress={() => handleFlightCardPress(flight)}>
+      <View>
+        <FlightCard
           id={flightId}
           date={flightDetails.date}
           departure={flightDetails.start_location}
@@ -26,6 +32,7 @@ const FlightHistoryScreen = ({ route }) => {
           pilot={flightDetails.role}
         />
       </View>
+    </TouchableOpacity>
     )
   })
 
