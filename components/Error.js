@@ -7,16 +7,21 @@ const ErrorComponent = ({ errorMessage }) => {
   return (
     <View style={styles.main}>
       <Text>{ errorMessage }</Text>
-      <Text>Error Component</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   main: {
+    height: '100%',
     alignItems: 'center',
+    justifyContent: 'center'
   }
 })
+
+ErrorComponent.propTypes = {
+  errorMessage: PropTypes.string.isRequired
+}
 
 
 export default ErrorComponent
