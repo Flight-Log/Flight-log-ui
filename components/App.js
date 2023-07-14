@@ -29,10 +29,16 @@ class AppNavigator extends Component {
         this.setState({ userFlights: data.data })
         // Update component state or perform other operations with the data
       })
+      .catch(error => {
+        this.setState({ error: 'Error fetching user flights' })
+      })
     getUser()
       .then(data => {
         // console.log(data.data.attributes)
         this.setState({ user: data.data })
+      })
+      .catch(error => {
+        this.setState({ error: 'Error fetching user data' })
       })
 
   }
@@ -49,9 +55,9 @@ class AppNavigator extends Component {
       .then(flight => {
         this.setState({ userFlights: [...this.state.userFlights, flight] });
       })
-    // .catch(error => {
-    //   console.error('Error making POST request', error);
-    // });
+    .catch(error => {
+      this.setState({ error: 'Error adding flight' })
+    });
   }
   render() {
     const { user, userFlights, error } = this.state;
