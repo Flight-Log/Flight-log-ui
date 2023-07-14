@@ -6,6 +6,7 @@ import HomeScreen from './HomeScreen'
 import FlightForm from './FlightForm'
 import FlightHistoryScreen from './FlightHistoryScreen'
 import FlightDetailsScreen from './FlightDetailsScreen'
+import ErrorComponent from './Error'
 import { getUser, getUserFlights } from '../ApiCalls'
 
 
@@ -28,10 +29,16 @@ class AppNavigator extends Component {
         this.setState({ userFlights: data.data })
         // Update component state or perform other operations with the data
       })
+      .catch(error => {
+        this.setState({ error: 'Could not gather your flights, please try again later!' })
+      })
     getUser()
       .then(data => {
         // console.log(data.data.attributes)
         this.setState({ user: data.data })
+      })
+      .catch(error => {
+        this.setState({ error: 'Could not gather your data, please try again later!' })
       })
 
   }
@@ -48,11 +55,18 @@ class AppNavigator extends Component {
       .then(flight => {
         this.setState({ userFlights: [...this.state.userFlights, flight] });
       })
-    // .catch(error => {
-    //   console.error('Error making POST request', error);
-    // });
+    .catch(error => {
+      this.setState({ error: 'Could not add your flight' })
+    });
   }
   render() {
+    const { user, userFlights, error } = this.state;
+
+    // const errorComponent = error !== '' ? <ErrorComponent errorMessage={error} /> : null;
+
+    if(error !== '') {
+      return <ErrorComponent errorMessage={error} />
+    }
 
     return (
       <NavigationContainer>
@@ -61,8 +75,6 @@ class AppNavigator extends Component {
           <Stack.Screen name="LogFlight" options={{ title: 'Log Flight' }}>
             {(props) => <FlightForm {...props} addFlight={this.addFlight} />}
           </Stack.Screen>
-          {/* <Stack.Screen name="FlightHistory" component={FlightHistoryScreen} user={this.state.user} userFlights={this.state.userFlights} />
-             */}
           <Stack.Screen
             name="Flight History"
             component={FlightHistoryScreen}
