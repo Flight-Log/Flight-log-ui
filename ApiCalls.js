@@ -1,5 +1,5 @@
 const getUserFlights = () => {
-  return fetch('https://fa654a41-d040-4528-99c2-4e7b349236b9.mock.pstmn.io/user/1/fli')
+  return fetch('https://fa654a41-d040-4528-99c2-4e7b349236b9.mock.pstmn.io/user/1/flights')
     .then(response => {
       if (!response.ok) {
         throw new Error('Unable to fetch user flights. Please try again later.');

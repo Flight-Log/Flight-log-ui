@@ -64,6 +64,10 @@ class AppNavigator extends Component {
 
     // const errorComponent = error !== '' ? <ErrorComponent errorMessage={error} /> : null;
 
+    if(error !== '') {
+      return <ErrorComponent errorMessage={error} />
+    }
+
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
@@ -79,11 +83,6 @@ class AppNavigator extends Component {
               userFlights: this.state.userFlights
             }} />
           <Stack.Screen name="FlightDetails" component={FlightDetailsScreen} />
-          {error !== '' ? (
-            <Stack.Screen name="Error">
-              {(props) => <ErrorComponent {...props} errorMessage={error} />}
-            </Stack.Screen>
-            ) : null}
         </Stack.Navigator>
       </NavigationContainer>
     )

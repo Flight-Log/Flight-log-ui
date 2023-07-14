@@ -1,15 +1,22 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 
 const ErrorComponent = ({ errorMessage }) => {
 
   return (
-    <View>
-      <Text>Error Component</Text>
+    <View style={styles.main}>
       <Text>{ errorMessage }</Text>
+      <Text>Error Component</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  main: {
+    alignItems: 'center',
+  }
+})
+
 
 export default ErrorComponent
