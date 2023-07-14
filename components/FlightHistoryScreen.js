@@ -15,10 +15,15 @@ const FlightHistoryScreen = ({ route }) => {
     navigation.navigate('FlightDetails', { flight })
   }
 
-  const flightCards = userFlights.map((flight) => {
+  const flightCards = userFlights.length === 0 ? (
+    <Text>No Flights Logged</Text>
+  ) : (
+
+    userFlights.map((flight) => {
 
     const flightId = flight.id;
     const flightDetails = flight.attributes;
+  
     
     return (
 
@@ -36,7 +41,7 @@ const FlightHistoryScreen = ({ route }) => {
     </TouchableOpacity>
     )
   })
-
+  )
   return (
     <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
       <View style={[ styles.container, { flexDirection: 'column' }]}>
