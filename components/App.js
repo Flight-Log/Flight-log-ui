@@ -44,7 +44,8 @@ class AppNavigator extends Component {
   }
 
   addFlight = (newFlight) => {
-    fetch("https://fa654a41-d040-4528-99c2-4e7b349236b9.mock.pstmn.io/users/1/flights", {
+    console.log(newFlight)
+    fetch("https://flight-log-be-24cea5be4c8e.herokuapp.com/api/v1/users/1/flights/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -53,11 +54,12 @@ class AppNavigator extends Component {
     })
       .then(res => res.json())
       .then(flight => {
-        this.setState({ userFlights: [...this.state.userFlights, flight] });
+        this.setState({ userFlights: [...this.state.userFlights, flight]});
       })
-    .catch(error => {
-      this.setState({ error: 'Could not add your flight' })
-    });
+      .catch(error => {
+        console.error('Error adding flight:', error);
+        this.setState({ error: 'Could not add your flight' });
+      });
   }
   render() {
     const { user, userFlights, error } = this.state;
