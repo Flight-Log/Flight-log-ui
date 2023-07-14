@@ -3,21 +3,23 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 function HomeScreen({ navigation }) {
   return (
-    <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
+    <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground} testID="image-background">
       <View style={styles.container}>
-        <Text style={styles.title}>Flight Log</Text>
+        <Text style={styles.title} testID="logo-text">Flight Log</Text>
         <View style={styles.content}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>What would you like to do today?</Text>
+            <Text style={styles.text} testID="question-text">What would you like to do today?</Text>
           </View>
           <TouchableOpacity
             style={styles.button}
+            testID="log-flight-button"
             onPress={() => navigation.navigate('LogFlight')}
           >
             <Text style={styles.buttonText}>Log a Flight</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
+            testID="view-flights-button"
             onPress={() => navigation.navigate('Flight History')}
           >
             <Text style={styles.buttonText}>View Flight History</Text>
