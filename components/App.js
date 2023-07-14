@@ -6,6 +6,7 @@ import HomeScreen from './HomeScreen'
 import FlightForm from './FlightForm'
 import FlightHistoryScreen from './FlightHistoryScreen'
 import FlightDetailsScreen from './FlightDetailsScreen'
+import Error from './Error'
 import { getUser, getUserFlights } from '../ApiCalls'
 
 
@@ -53,6 +54,11 @@ class AppNavigator extends Component {
     // });
   }
   render() {
+    const { user, userFlights, error } = this.state;
+
+    const errorComponent = error !== '' ? (
+      <Error errorMessage={error} />
+    ) : null;
 
     return (
       <NavigationContainer>
