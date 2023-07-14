@@ -1,0 +1,45 @@
+
+{
+  "data": [
+      {
+          "id": "1",
+          "type": "flight",
+          "attributes": {
+                  "night_hours": "2.0",
+                  "day_hours": "1.0",
+                  "aircraft": "Boeing 737",
+                  "description": "great time!",
+                  "date": "2023-03-09",
+                  "start_location": "DEN",
+                  "end_location": "LAX",
+                  "role": "pilot"
+          }},
+      {
+          "id": "2",
+          "type": "flight",
+          "attributes": {
+                  "night_hours": "4.0",
+                  "day_hours": "0.0",
+                  "aircraft": "Boeing 737",
+                  "description": "whoops we crashed!",
+                  "date": "2023-05-09",
+                  "start_location": "MIA",
+                  "end_location": "MSY",
+                  "role": "co-pilot"
+          }},
+      {
+          "id": "3",
+          "type": "flight",
+          "attributes": {
+                  "night_hours": "9.0",
+                  "day_hours": "1.0",
+                  "aircraft": "Boeing 737",
+                  "description": "meh",
+                  "date": "2023-04-31",
+                  "start_location": "ATL",
+                  "end_location": "DAL",
+                  "role": "pilot"
+          }
+      }    
+  ]
+}
