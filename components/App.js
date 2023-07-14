@@ -30,7 +30,7 @@ class AppNavigator extends Component {
         // Update component state or perform other operations with the data
       })
       .catch(error => {
-        this.setState({ error: 'Error gathering user flights' })
+        this.setState({ error: 'Could not gather your flights, please try again later!' })
       })
     getUser()
       .then(data => {
@@ -38,7 +38,7 @@ class AppNavigator extends Component {
         this.setState({ user: data.data })
       })
       .catch(error => {
-        this.setState({ error: 'Error gathering user data' })
+        this.setState({ error: 'Could not gather your data, please try again later!' })
       })
 
   }
@@ -56,7 +56,7 @@ class AppNavigator extends Component {
         this.setState({ userFlights: [...this.state.userFlights, flight] });
       })
     .catch(error => {
-      this.setState({ error: 'Error adding flight' })
+      this.setState({ error: 'Could not add your flight' })
     });
   }
   render() {

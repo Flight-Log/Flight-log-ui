@@ -1,13 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 import PropTypes from 'prop-types'
 
 const ErrorComponent = ({ errorMessage }) => {
 
   return (
-    <View style={styles.main}>
-      <Text>{ errorMessage }</Text>
-    </View>
+    <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
+      <View style={styles.main}>
+        <Text>{ errorMessage }</Text>
+      </View>
+    </ImageBackground>
   )
 }
 
