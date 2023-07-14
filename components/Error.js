@@ -7,6 +7,7 @@ const Error = ({ errorMessage }) => {
   return (
     <View>
       <Text>Error Component</Text>
+      <Text>{ errorMessage }</Text>
     </View>
   )
 }
