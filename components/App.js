@@ -6,7 +6,7 @@ import HomeScreen from './HomeScreen'
 import FlightForm from './FlightForm'
 import FlightHistoryScreen from './FlightHistoryScreen'
 import FlightDetailsScreen from './FlightDetailsScreen'
-import Error from './Error'
+import ErrorComponent from './Error'
 import { getUser, getUserFlights } from '../ApiCalls'
 
 
@@ -62,9 +62,7 @@ class AppNavigator extends Component {
   render() {
     const { user, userFlights, error } = this.state;
 
-    const errorComponent = error !== '' ? (
-      <Error errorMessage={error} />
-    ) : null;
+    // const errorComponent = error !== '' ? <ErrorComponent errorMessage={error} /> : null;
 
     return (
       <NavigationContainer>
@@ -81,6 +79,11 @@ class AppNavigator extends Component {
               userFlights: this.state.userFlights
             }} />
           <Stack.Screen name="FlightDetails" component={FlightDetailsScreen} />
+          {error !== '' ? (
+            <Stack.Screen name="Error">
+              {(props) => <ErrorComponent {...props} errorMessage={error} />}
+            </Stack.Screen>
+            ) : null}
         </Stack.Navigator>
       </NavigationContainer>
     )
