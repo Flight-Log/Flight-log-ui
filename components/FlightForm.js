@@ -46,7 +46,7 @@ class FlightForm extends Component {
 }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, userFlights } = this.props;
 
     return (
 
@@ -119,7 +119,7 @@ class FlightForm extends Component {
               <Text style={styles.buttonText}>Log Flight</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History', { userFlights })}>
               <Text style={styles.buttonText}>View Flight History</Text>
             </TouchableOpacity>
 
