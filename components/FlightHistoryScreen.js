@@ -7,8 +7,16 @@ import PropTypes from 'prop-types'
 
 const FlightHistoryScreen = ({ route }) => {
  
-  // console.log(route.params.userFlights)
-  const userFlights = route.params.userFlights
+  console.log('first console history', route.params.userFlights)
+  const userFlights = route.params?.userFlights
+  console.log('userFlights:', userFlights);
+    if (!userFlights) {
+      return (
+        <View>
+          <Text>Loading Flight History...</Text>
+        </View>
+      )
+    }
   const navigation = useNavigation()
 
   const handleFlightCardPress = (flight) => {
