@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground, Modal } from 'react-native';
 import PropTypes from 'prop-types';
 
 class FlightForm extends Component {
@@ -35,6 +35,7 @@ class FlightForm extends Component {
     const newFlight = { ...this.state };
     this.props.addFlight(newFlight);
     this.clearInputs();
+    this.showModal();
   };
 
   clearInputs = () => {
@@ -49,6 +50,29 @@ class FlightForm extends Component {
       role: '',
     });
   };
+
+  showModal = () => {
+    this.isModalVisible = true;
+    setTimeout(() => {
+      this.isModalVisible = false;
+      this.forceUpdate();
+    }, 2000);
+  };
+
+  renderModal() {
+    if (this.isModalVisible) {
+      return (
+        <Modal transparent animationType="fade">
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalText}>Flight log submitted!</Text>
+            </View>
+          </View>
+        </Modal>
+      );
+    }
+    return null;
+  }
 
   render() {
     const { navigation } = this.props;
@@ -136,6 +160,8 @@ class FlightForm extends Component {
             </TouchableOpacity>
           </View>
         </View>
+        
+        {this.renderModal()}
       </ImageBackground>
     );
   }
@@ -189,10 +215,27 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
-FlightForm.propTypes = {
-  addFlight: PropTypes.func.isRequired,
-};
+// FlightForm.propTypes = {
+//   addFlight: PropTypes.func.isRequired,
+// };
 
 export default FlightForm;
+
