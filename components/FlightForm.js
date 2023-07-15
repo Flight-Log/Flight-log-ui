@@ -26,7 +26,6 @@ class FlightForm extends Component {
     event.preventDefault()
 
     const newFlight = {
-      id: Date.now(),
       ...this.state
     };
     this.props.addFlight(newFlight)
@@ -55,19 +54,22 @@ class FlightForm extends Component {
         <View style={styles.container}>
           <Text style={styles.label}>Log a Flight</Text>
           <View style={styles.inputContainer}>
-            <TextInput
+          <TextInput
               style={styles.input}
               placeholder="Night Hours"
               placeholderTextColor="gray"
               value={this.state.night_hours}
-              onChangeText={(text) => this.handleChange('night_hours', text)}
+              onChangeText={(number) => this.handleChange('night_hours', parseFloat(number))}
+              keyboardType="numeric"
             />
+
             <TextInput
               style={styles.input}
               placeholder="Day hours"
               placeholderTextColor="gray"
               value={this.state.day_hours}
-              onChangeText={(text) => this.handleChange('day_hours', text)}
+              onChangeText={(number) => this.handleChange('day_hours', parseFloat(number))}
+              keyboardType="numeric"
             />
             <TextInput
               style={styles.input}
