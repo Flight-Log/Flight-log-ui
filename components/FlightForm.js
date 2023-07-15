@@ -14,6 +14,7 @@ class FlightForm extends Component {
       start_location: '',
       end_location: '',
       role: '',
+      isFormCompleted: false,
     };
   }
 
@@ -76,6 +77,26 @@ class FlightForm extends Component {
 
   render() {
     const { navigation, userFlights } = this.props;
+    const {
+      night_hours,
+      day_hours,
+      aircraft,
+      description,
+      date,
+      start_location,
+      end_location,
+      role,
+    } = this.state;
+
+    const isFormCompleted =
+      night_hours !== '' &&
+      day_hours !== '' &&
+      aircraft !== '' &&
+      description !== '' &&
+      date !== '' &&
+      start_location !== '' &&
+      end_location !== '' &&
+      role !== '';
 
     return (
       <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
@@ -148,7 +169,7 @@ class FlightForm extends Component {
               onChangeText={(value) => this.handleChange('role', value)}
             />
 
-            <TouchableOpacity style={styles.button} onPress={this.handleSubmit}>
+            <TouchableOpacity style={ [styles.button, { backgroundColor: isFormCompleted ? '#1f4f99' : '#888888'}, ]} onPress={event => this.handleSubmit(event)} disabled={!isFormCompleted}>
               <Text style={styles.buttonText}>Log Flight</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History', { userFlights })}>
