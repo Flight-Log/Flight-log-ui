@@ -75,7 +75,7 @@ class FlightForm extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, userFlights } = this.props;
 
     return (
       <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
@@ -151,11 +151,7 @@ class FlightForm extends Component {
             <TouchableOpacity style={styles.button} onPress={this.handleSubmit}>
               <Text style={styles.buttonText}>Log Flight</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigation.navigate('Flight History')}
-            >
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History', { userFlights })}>
               <Text style={styles.buttonText}>View Flight History</Text>
             </TouchableOpacity>
           </View>
@@ -233,9 +229,9 @@ const styles = StyleSheet.create({
   },
 });
 
-// FlightForm.propTypes = {
-//   addFlight: PropTypes.func.isRequired,
-// };
+FlightForm.propTypes = {
+  addFlight: PropTypes.func.isRequired,
+ };
 
 export default FlightForm;
 

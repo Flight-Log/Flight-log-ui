@@ -53,7 +53,8 @@ class AppNavigator extends Component {
       body: JSON.stringify(newFlight)
     })
       .then(res => res.json())
-      .then(flight => {
+      .then(data => {
+        const flight = data.data
         this.setState({ userFlights: [...this.state.userFlights, flight]});
       })
       .catch(error => {
@@ -75,7 +76,7 @@ class AppNavigator extends Component {
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="LogFlight" options={{ title: 'Log Flight' }}>
-            {(props) => <FlightForm {...props} addFlight={this.addFlight} />}
+            {(props) => <FlightForm {...props} addFlight={this.addFlight} userFlights={userFlights} />}
           </Stack.Screen>
           <Stack.Screen
             name="Flight History"
