@@ -19,9 +19,11 @@ class FlightForm extends Component {
 
   handleChange = (name, value) => {
     if (name === 'night_hours' || name === 'day_hours') {
-      // Validate the input to allow only numbers or numbers with a decimal point
       const numericValue = value.replace(/[^0-9.]/g, '');
       this.setState({ [name]: numericValue });
+    } else if (name === 'start_location' || name === 'end_location') {
+      const uppercasedValue = value.toUpperCase();
+      this.setState({ [name]: uppercasedValue });
     } else {
       this.setState({ [name]: value });
     }
@@ -194,4 +196,3 @@ FlightForm.propTypes = {
 };
 
 export default FlightForm;
-
