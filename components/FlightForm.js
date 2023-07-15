@@ -94,7 +94,7 @@ class FlightForm extends Component {
 
             <TextInput
               style={styles.input}
-              placeholder="Date"
+              placeholder="Date (yyyy-mm-dd)"
               placeholderTextColor="gray"
               value={this.state.date}
               onChangeText={(value) => this.handleChange('date', value)}
