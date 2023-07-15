@@ -11,9 +11,12 @@ function FlightDetailsScreen({ route }) {
           <Text style={styles.label}>Date: {flight.attributes.date}</Text>
           <Text style={styles.label}>Departure: {flight.attributes.start_location}</Text>
           <Text style={styles.label}>Arrival: {flight.attributes.end_location}</Text>
+          <Text style={styles.label}>Day Hours: {flight.attributes.day_hours}</Text>
+          <Text style={styles.label}>Night Hours: {flight.attributes.night_hours}</Text>
           <Text style={styles.label}>Aircraft: {flight.attributes.aircraft}</Text>
           <Text style={styles.label}>Role: {flight.attributes.role}</Text>
           <Text style={styles.label}>Description: {flight.attributes.description}</Text>
+
         </View>
       </View>
     </ImageBackground>
