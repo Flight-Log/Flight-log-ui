@@ -30,23 +30,29 @@ class FlightForm extends Component {
     };
     this.props.addFlight(newFlight)
     this.clearInputs()
+    this.showSubmissionText()
 
   }
 
   clearInputs = () => {
-    this.setState({   
-    night_hours: '',
-    day_hours: '',
-    aircraft: '',
-    description: '',
-    date: '',
-    start_location: '',
-    end_location: '',
-    role: ''});
-}
+    this.setState({
+      night_hours: '',
+      day_hours: '',
+      aircraft: '',
+      description: '',
+      date: '',
+      start_location: '',
+      end_location: '',
+      role: ''
+    });
+  }
+  showSubmissionText = () => {
+    this.submissionSuccess = true
+  };
 
   render() {
-    const { navigation, userFlights } = this.props;
+    const { navigation, userFlights } = this.props
+    const showSubmitText = this.submissionSuccess
 
     return (
 
@@ -54,7 +60,7 @@ class FlightForm extends Component {
         <View style={styles.container}>
           <Text style={styles.label}>Log a Flight</Text>
           <View style={styles.inputContainer}>
-          <TextInput
+            <TextInput
               style={styles.input}
               placeholder="Night Hours"
               placeholderTextColor="gray"
@@ -122,7 +128,11 @@ class FlightForm extends Component {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Flight History', { userFlights })}>
               <Text style={styles.buttonText}>View Flight History</Text>
             </TouchableOpacity>
-
+            {showSubmitText && (
+              <View styles={styles.validContianer}>
+                <Text style={styles.validText}>Congrats, you logged a flight!</Text>
+              </View>
+            )}
           </View>
         </View>
       </ImageBackground>
@@ -180,6 +190,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  validText: {
+    color: '#1f4f99',
+    backgroundColor: '#ffffff',
+    padding: 8,
+    fontWeight: 'bold',
+    borderRadius: 20,
+  }
 })
 
 FlightForm.propTypes = {
