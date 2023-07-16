@@ -1,14 +1,14 @@
-
-describe('User Flight History', () => {
+describe('Flight history spec', () => {
   beforeEach(() => {
-    cy.intercept('GET', "'https://flight-log-be-24cea5be4c8e.herokuapp.com/api/v1/users/1/flights/", {
-      fixture: '/flights.json'
+    cy.intercept('GET', 'https://flight-log-be-24cea5be4c8e.herokuapp.com/api/v1/users/1/flights/', {
+      statusCode: 200,
+      fixture: 'flights'
     })
-    cy.visit('http://localhost:19006/')
-  })
+  cy.visit('https://flight-log-eight.vercel.app/')
+})
 
   it('Should display a summary of the user/s flight times and total flights', () => {
-    cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click() //.url().should('eq', 'https://flight-log-ui-hjawad22-flightlog.vercel.app/')
+    cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click() 
     cy.get(':nth-child(1) > :nth-child(1)').contains('Total Flights')
     cy.get(':nth-child(1) > :nth-child(2)').contains('3')
     cy.get(':nth-child(2) > :nth-child(1)').contains('Total Hours')
@@ -21,7 +21,7 @@ describe('User Flight History', () => {
 
   it('Should display a container holding a history of flight cards with a description for each flight logged', () => {
     cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click() 
-    cy.get('.r-flexGrow-16y2uox > .r-alignItems-1awozwy').find(':nth-child(1) > :nth-child(1) > .r-backgroundColor-14lw9ot').should('exist')
+    cy.get(':nth-child(1) > :nth-child(1) > .r-14lw9ot').should('exist')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1)').contains('Date:')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1)').contains('2023-03-09')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2)').contains('Aircraft')
@@ -32,8 +32,7 @@ describe('User Flight History', () => {
       .get(':nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(2)').contains('pilot')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(3)').contains('Arrival:')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(3)').contains('LAX')
-    cy.get('.r-flexGrow-16y2uox >').find(':nth-child(2) > :nth-child(1)').should('exist')
-    cy.get('.r-flexGrow-16y2uox >').find(':nth-child(3) > :nth-child(1)').should('exist')
+      cy.get(':nth-child(3) > :nth-child(1) > .r-14lw9ot')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1)').contains('Date:')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1)').contains('2023-04-31')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2)').contains('Aircraft')
@@ -43,7 +42,7 @@ describe('User Flight History', () => {
       .get(':nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(2)').contains('Role:')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(2)').contains('pilot')
       .get(':nth-child(1) > :nth-child(1) > :nth-child(3)').contains('Arrival:')
-      .get(':nth-child(3) > :nth-child(1) > .r-backgroundColor-14lw9ot > :nth-child(3)').contains('DAL')
+      .get(':nth-child(3) > :nth-child(1) > .r-14lw9ot').contains('DAL')
       
   })
 
