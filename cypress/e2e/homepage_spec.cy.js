@@ -4,7 +4,7 @@ describe('homepage spec', () => {
         statusCode: 200,
         fixture: 'flights'
       })
-    cy.visit('https://flight-log-eight.vercel.app/')
+    cy.visit('https://flight-log-six.vercel.app/')
   })
 
   it('Should display logo', () => {
@@ -17,12 +17,12 @@ describe('homepage spec', () => {
 
   it('Should display a log flight button that takes user to flight form', () => {
     cy.get('[data-testid="log-flight-button"]').contains('Log a Flight')
-      .get('[data-testid="log-flight-button"]').click().url().should('eq', 'https://flight-log-eight.vercel.app/')
+      .get('[data-testid="log-flight-button"]').click().url().should('eq', 'https://flight-log-six.vercel.app/')
   })
 
   it('Should display a log view flight history button that takes user to flight form', () => {
     cy.get('[data-testid="view-flights-button"]').contains('View Flight History')
-      .get('[data-testid="view-flights-button"]').click().url().should('eq', 'https://flight-log-eight.vercel.app/')
+      .get('[data-testid="view-flights-button"]').click().url().should('eq', 'https://flight-log-six.vercel.app/')
   })
 
   it('Should display a background image', () => {
