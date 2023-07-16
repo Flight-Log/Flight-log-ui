@@ -12,7 +12,7 @@ it('Should display a summary of the user/s flight times and total flights', () =
   .get(':nth-child(1) > :nth-child(1)').contains('Total Flights')
   .get(':nth-child(1) > :nth-child(2)').contains('3')
   .get(':nth-child(2) > :nth-child(1)').contains('Total Hours')
-  .get('.r-1bcl02d > :nth-child(2) > :nth-child(2)').should('have.text', '17')
+  .get('.r-1bcl02d > :nth-child(2)').should('have.text', 'Total Hours17')
   .get(':nth-child(3) > :nth-child(1)').contains('Night Hours')
   .get(':nth-child(3) > :nth-child(2)').contains('15')
   .get(':nth-child(4) > :nth-child(1)').contains('Day Hours')
