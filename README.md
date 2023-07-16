@@ -13,9 +13,9 @@ https://flight-log-eight.vercel.app/
 Javascript | React Native | Cypress | APIs | Git | Figma 
 
 ## Contributors (Front End):
-Houda Jawad | [GitHub](https://github.com/hjawad22) | [LinkedIn](https://www.linkedin.com/in/houda-jawad-b0315675/)
-Jonathan Chanay | [GitHub](https://github.com/cadechaney) | [LinkedIn](https://www.linkedin.com/in/jonathan-chaney1/)
-Dustin Gouner | [GitHub](https://github.com/dustingouner) | [LinkedIn](https://www.linkedin.com/in/dustin-gouner/)
+Houda Jawad | [GitHub](https://github.com/hjawad22) | [LinkedIn](https://www.linkedin.com/in/houda-jawad-b0315675/)\
+Jonathan Chanay | [GitHub](https://github.com/cadechaney) | [LinkedIn](https://www.linkedin.com/in/jonathan-chaney1/)\
+Dustin Gouner | [GitHub](https://github.com/dustingouner) | [LinkedIn](https://www.linkedin.com/in/dustin-gouner/)\
 Mattheus Saqueli | [GitHub](https://github.com/mattsaqueli) | [LinkedIn](https://www.linkedin.com/in/mattheus-saqueli-409813250/)
 
 ## Learning Goals:
