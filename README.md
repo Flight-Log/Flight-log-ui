@@ -7,14 +7,15 @@ Flight Log is an innovative React Native app, meticulously crafted by a skilled 
 https://flight-log-eight.vercel.app/
 
 ## Preview:
-![gif description](link here)
+![App Walk Through](https://github.com/Flight-Log/flight-log-ui/assets/121843832/981bfd85-538c-45c4-90e0-f8dfde99feb9)
+
 
 ## Technologies:
 Javascript | React Native | Cypress | APIs | Git | Figma 
 
 ## Contributors (Front End):
 Houda Jawad | [GitHub](https://github.com/hjawad22) | [LinkedIn](https://www.linkedin.com/in/houda-jawad-b0315675/)\
-Jonathan Chanay | [GitHub](https://github.com/cadechaney) | [LinkedIn](https://www.linkedin.com/in/jonathan-chaney1/)\
+Jonathan Chaney | [GitHub](https://github.com/cadechaney) | [LinkedIn](https://www.linkedin.com/in/jonathan-chaney1/)\
 Dustin Gouner | [GitHub](https://github.com/dustingouner) | [LinkedIn](https://www.linkedin.com/in/dustin-gouner/)\
 Mattheus Saqueli | [GitHub](https://github.com/mattsaqueli) | [LinkedIn](https://www.linkedin.com/in/mattheus-saqueli-409813250/)
 
