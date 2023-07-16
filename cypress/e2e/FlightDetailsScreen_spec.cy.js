@@ -4,11 +4,12 @@ describe('Flight history spec', () => {
       statusCode: 200,
       fixture: 'flights'
     })
+    cy.visit('https://flight-log-six.vercel.app/')
   })
-
-it('Should be able to click a flight card and get directed to a details screen', () => {
-  cy.visit('https://flight-log-six.vercel.app/')
+  
+  it('Should be able to click a flight card and get directed to a details screen', () => {
   cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click()
+  cy.wait(3000)
   cy.get(':nth-child(1) > :nth-child(1) > .r-14lw9ot').should('exist')
       .get(':nth-child(1) > :nth-child(1) > .r-14lw9ot').click()
       .get(':nth-child(1) > :nth-child(1) > .r-1awozwy > .css-175oi2r > :nth-child(2)').contains('Date:')
