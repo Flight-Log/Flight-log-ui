@@ -7,6 +7,9 @@ describe('Flight history spec', () => {
   cy.visit('https://flight-log-eight.vercel.app/')
 })
 
+it('Should display a summary of the user/s flight times and total flights', () => {
+  cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click()})
+
 
   it('Should display a container holding a history of flight cards with a description for each flight logged', () => {
     cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click() 
@@ -35,15 +38,15 @@ describe('Flight history spec', () => {
   })
 
   // it('Should display a summary of the user/s flight times and total flights', () => {
-  //   cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click() 
-  //   .get(':nth-child(1) > :nth-child(1)').contains('Total Flights')
-  //   .get(':nth-child(1) > :nth-child(2)').contains('3')
-  //   .get(':nth-child(2) > :nth-child(1)').contains('Total Hours')
-  //   .get(':nth-child(2) > :nth-child(2)').contains('17')
-  //   .get(':nth-child(3) > :nth-child(1)').contains('Night Hours')
-  //   .get(':nth-child(3) > :nth-child(2)').contains('15')
-  //   .get(':nth-child(4) > :nth-child(1)').contains('Day Hours')
-  //   .get(':nth-child(4) > :nth-child(2)').contains('2')
-  // })
+  //   cy.get('[data-testid="view-flights-button"]').contains('View Flight History').click()})
+  // //   .get(':nth-child(1) > :nth-child(1)').contains('Total Flights')
+  // //   .get(':nth-child(1) > :nth-child(2)').contains('3')
+  // //   .get(':nth-child(2) > :nth-child(1)').contains('Total Hours')
+  // //   .get(':nth-child(2) > :nth-child(2)').contains('17')
+  // //   .get(':nth-child(3) > :nth-child(1)').contains('Night Hours')
+  // //   .get(':nth-child(3) > :nth-child(2)').contains('15')
+  // //   .get(':nth-child(4) > :nth-child(1)').contains('Day Hours')
+  // //   .get(':nth-child(4) > :nth-child(2)').contains('2')
+  // // })
 
 })
