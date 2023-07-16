@@ -1,0 +1,13 @@
+{"data": {
+  "id": "4",
+  "type": "flight",
+  "attributes":{
+  "night_hours": "9",
+  "day_hours": "8",
+  "aircraft": "cessna 172",
+  "description": "touch and go",
+  "date": "2023-01-01",
+  "start_location": "AMD",
+  "end_location": "SFO",
+  "role": "PIC"
+}}}
