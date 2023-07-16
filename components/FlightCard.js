@@ -3,11 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Link } from '@react-navigation/native'
 import PropTypes from 'prop-types'
 
-const FlightCard = ({ date, departure, arrival, aircraft, pilot, id }) => {
-  // if (!id || !date || !departure || !arrival || !aircraft || !pilot) {
-    // Handle invalid flight data, e.g., return a fallback UI
-  //   return <Text>Invalid Flight Data</Text>;
-  // }
+const FlightCard = ({ date, departure, arrival, aircraft, pilot }) => {
   return (
     <View style={styles.card}>
       <View style={styles.row}>

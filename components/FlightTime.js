@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     height: '25%',
     alignItems: 'center',
     justifyContent: 'center'
-    // borderWidth: 2
   },
   header: {
     height: '30%',
