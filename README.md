@@ -7,7 +7,7 @@ Flight Log is an innovative React Native app, meticulously crafted by a skilled 
 https://flight-log-eight.vercel.app/
 
 ## Preview:
-![App Walk Through](https://github.com/Flight-Log/flight-log-ui/assets/121843832/981bfd85-538c-45c4-90e0-f8dfde99feb9)
+![App Walkthrough](https://github.com/Flight-Log/flight-log-ui/assets/121843832/36479d87-745a-4e57-8f33-d86d0a992894)
 
 
 ## Technologies:
@@ -20,7 +20,13 @@ Dustin Gouner | [GitHub](https://github.com/dustingouner) | [LinkedIn](https://w
 Mattheus Saqueli | [GitHub](https://github.com/mattsaqueli) | [LinkedIn](https://www.linkedin.com/in/mattheus-saqueli-409813250/)
 
 ## Learning Goals:
+Learn a new technology (React Native) while also working with a Back End team learning a new technology (Python, Django).
 
 ## Wins/Challenges:
+Wins: Learning React Native while using the Xcode simulator to view the DOM. 
+
+Challenges: Deploying using vercel. Testing End to End with Cypress. 
 
 ## Future Addition:
+
+Login ability to have more than one user. More in depth details the user can input about each flight.
