@@ -1,4 +1,3 @@
-// import React, {useEffect, useState } from 'react'
 import React, { Component } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -7,7 +6,7 @@ import FlightForm from './FlightForm'
 import FlightHistoryScreen from './FlightHistoryScreen'
 import FlightDetailsScreen from './FlightDetailsScreen'
 import ErrorComponent from './Error'
-import { getUser, getUserFlights } from '../ApiCalls'
+import getUserFlights from '../ApiCalls'
 
 
 const Stack = createNativeStackNavigator()
@@ -25,22 +24,12 @@ class AppNavigator extends Component {
   componentDidMount() {
     getUserFlights()
       .then(data => {
-        // console.log(data.data);
         this.setState({ userFlights: data.data })
-        // Update component state or perform other operations with the data
       })
       .catch(error => {
+        console.error(error)
         this.setState({ error: 'Could not gather your flights, please try again later!' })
       })
-    getUser()
-      .then(data => {
-        // console.log(data.data.attributes)
-        this.setState({ user: data.data })
-      })
-      .catch(error => {
-        this.setState({ error: 'Could not gather your data, please try again later!' })
-      })
-
   }
 
   addFlight = (newFlight) => {
@@ -55,7 +44,7 @@ class AppNavigator extends Component {
       .then(res => res.json())
       .then(data => {
         const flight = data.data
-        this.setState({ userFlights: [...this.state.userFlights, flight]});
+        this.setState({ userFlights: [...this.state.userFlights, flight] });
       })
       .catch(error => {
         console.error('Error adding flight:', error);
@@ -63,11 +52,9 @@ class AppNavigator extends Component {
       });
   }
   render() {
-    const { user, userFlights, error } = this.state;
+    const {userFlights, error } = this.state;
 
-    // const errorComponent = error !== '' ? <ErrorComponent errorMessage={error} /> : null;
-
-    if(error !== '') {
+    if (error !== '') {
       return <ErrorComponent errorMessage={error} />
     }
 
@@ -82,7 +69,6 @@ class AppNavigator extends Component {
             name="Flight History"
             component={FlightHistoryScreen}
             initialParams={{
-              user: this.state.user,
               userFlights: this.state.userFlights
             }} />
           <Stack.Screen name="FlightDetails" component={FlightDetailsScreen} />

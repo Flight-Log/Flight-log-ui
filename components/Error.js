@@ -7,7 +7,7 @@ const ErrorComponent = ({ errorMessage }) => {
   return (
     <ImageBackground source={require('../assets/hero-img.png')} style={styles.imageBackground}>
       <View style={styles.main}>
-        <Text>{ errorMessage }</Text>
+        <Text>{errorMessage}</Text>
       </View>
     </ImageBackground>
   )

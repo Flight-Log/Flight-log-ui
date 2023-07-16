@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react'
 import { View, Text, ScrollView, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
 import FlightTime from './FlightTime'
 import FlightCard from './FlightCard'
