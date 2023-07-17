@@ -1,10 +1,4 @@
-describe('Flight Details spec', () => {
-  beforeEach(() => {
-    cy.intercept('GET', 'https://flight-log-be-24cea5be4c8e.herokuapp.com/api/v1/users/1/flights/', {
-      statusCode: 200,
-      fixture: 'flights'
-    })
-  })
+
 
 // it('Should be able to click a flight card and get directed to a details screen', () => {
 //   cy.visit('https://flight-log-six.vercel.app/')
@@ -28,4 +22,4 @@ describe('Flight Details spec', () => {
 //       .get(':nth-child(1) > :nth-child(1) > .r-1awozwy > .css-175oi2r > :nth-child(9)').contains('whoops we crashed!')
 //   })
 
-})
+// })
