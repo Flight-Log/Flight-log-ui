@@ -24,9 +24,13 @@ Learn a new technology (React Native) while also working with a Back End team le
 
 ## Wins/Challenges:
 Wins: Learning React Native while using the Xcode simulator to view the DOM. 
+Successfully deployed the web version of our React Native app.
+Problem solved and collaborated well in a full stack team. 
 
-Challenges: Deploying using vercel. Testing End to End with Cypress. 
+Challenges: Deploying using Vercel. Testing End to End with Cypress. 
+Implementing CI with CircleCI and Cypress proved to be a bit of a challenge.
 
 ## Future Addition:
 
-Login ability to have more than one user. More in depth details the user can input about each flight.
+Login ability to have more than one user. More in-depth details the user can input about each flight.
+Include weather updates for the day.
