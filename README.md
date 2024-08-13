@@ -3,9 +3,6 @@
 ## Context:
 Flight Log is an innovative React Native app, meticulously crafted by a skilled and collaborative team of 4 front-end developers and 3 back-end developers. Together, we combined our expertise and creativity to cater to the needs of pilots seeking efficient flight management right from their mobile devices. With its mobile-friendly interface, this software development project empowers users to effortlessly log their flights, maintain essential flight details, and enjoy the convenience of on-the-go flight tracking. Pilots can easily access comprehensive flight cards and obtain in-depth information with just a click, making Flight Log the ultimate companion for seamless and streamlined flight management.
 
-## Deployed link:
-https://flight-log-six.vercel.app/
-
 ## Preview:
 ![App Walkthrough](https://github.com/Flight-Log/flight-log-ui/assets/121843832/36479d87-745a-4e57-8f33-d86d0a992894)
 
